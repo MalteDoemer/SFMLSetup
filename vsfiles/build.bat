@@ -35,12 +35,12 @@ exit /b
 
 :BuildDebug
 pushd %~dp0..\obj
-cl /EHsc /analyze- /W3 /Zc:wchar_t /MDd /Zi /Zc:inline /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_UNICODE" /D "UNICODE" /I%SFML_INCLUDE% %files% /link /DEBUG /out:%OUT_FILE%
+cl /EHsc /analyze- /W3 /Zc:wchar_t /MDd /Zi /Zc:inline /D "WIN32" /D "_DEBUG" /D "DEBUG" /D "_CONSOLE" /D "_UNICODE" /D "UNICODE" /I%SFML_INCLUDE% %files% /link /DEBUG /out:%OUT_FILE%
 popd
 goto:eof
 
 :BuildRelease
 pushd %~dp0..\obj
-cl /EHsc /analyze- /W3 /Zc:wchar_t /MDd /Zi /O2 /Oi /Zc:inline /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_UNICODE" /D "UNICODE" /I%SFML_INCLUDE% %files% /link /out:%OUT_FILE%
+cl /EHsc /analyze- /W3 /Zc:wchar_t /MDd /GL /INCREMENTAL:NO /O2 /Oi /Zc:inline /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_UNICODE" /D "UNICODE" /I%SFML_INCLUDE% %files% /link /out:%OUT_FILE%
 popd
 goto:eof
