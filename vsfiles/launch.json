@@ -8,7 +8,7 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "preLaunchTask": "c++ build",
+            "preLaunchTask": "c++ build debug",
             "program": "${workspaceFolder}/bin/${workspaceFolderBasename}.exe",
             "args": [],
             "stopAtEntry": false,

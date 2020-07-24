@@ -13,12 +13,28 @@
     },
     "tasks": [
         {
-            "label": "c++ build",
+            "label": "c++ build debug",
             "group": "build",
             "type": "shell",
             "command": ".vscode\\build.bat",
             "args": [
                 "${workspaceFolderBasename}.exe"
+            ],
+            "dependsOn": [
+                "clean bin",
+                "clean obj"
+            ],
+            //"problemMatcher": "$msCompile"
+            "problemMatcher": []
+        },
+        {
+            "label": "c++ build release",
+            "group": "build",
+            "type": "shell",
+            "command": ".vscode\\build.bat",
+            "args": [
+                "${workspaceFolderBasename}.exe",
+                "release"
             ],
             "dependsOn": [
                 "clean bin",
