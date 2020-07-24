@@ -1,7 +1,7 @@
 @echo off
 
 set "setupDir=%~dp0"
-set version=2.5.1
+set "version=2.5.1"
 
 setlocal enabledelayedexpansion
     mkdir .vscode
